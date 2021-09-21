@@ -117,18 +117,20 @@ class Book
      * Prints a formatted list of book qualities
      * for 2.87
      * modified for 2.88
+     * modified for 2.89
      */
     public void printDetails()
     {
         System.out.println("Title: "+title);
         System.out.println("Author: "+author);
         System.out.println("Number of Pages: "+pages);
-        //if there is no reference number assigned, it will say so
-        if(refNumber!=""){
+        //I implemented something very similar to this before even looking at 2.89
+        if(refNumber.length()>=1){
            System.out.println("Reference Number: "+refNumber);  
         }
         else{
-           System.out.println("Reference Number: N/A");   
+            //why print ZZZ and not something useful to the user, like Reference Number: N/A?
+           System.out.println("ZZZ");   
         }
     }
 }
