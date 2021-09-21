@@ -1,7 +1,8 @@
 /**
  * A class that maintains information on a book, including author, title,
- * and the number of pages.
+ * the number of pages, reference number, and number of times borrowed
  * allows for the addition of a reference number via set method
+ * includes a borrow method that increments borrowed by one
  * implemented methods to get, and print all fields
  * printDetails prints all fields simultaneously
  * @author Nicholas Trilone
@@ -16,6 +17,8 @@ class Book
     private int pages;
     //added 2.88
     private String refNumber;
+    //added 2.91
+    private int borrowed;
     
     /**
      * Set the author, title, pages, and ref fields when this object
@@ -67,6 +70,15 @@ class Book
     }
     
     /**
+     * Returns borrowed number
+     * for 2.91
+     */
+    public int getBorrowed()
+    {
+        return borrowed;   
+    }
+    
+    /**
      * Prints book title
      * for 2.84
      */
@@ -109,6 +121,15 @@ class Book
     }
     
     /**
+     * Prints number of times the book has been borrowed
+     * for 2.91
+     */
+    public void printBorrowed()
+    {
+        System.out.println("This book's has been borrowed "+borrowed+" times.");
+    }
+    
+    /**
      * Sets reference number(String)
      * must be at least three characters long
      * for 2.88
@@ -125,10 +146,20 @@ class Book
     }
     
     /**
+     * Increments borrowed field by one
+     * for 2.91
+     */
+    public void borrow()
+    {
+        borrowed++;
+    }
+    
+    /**
      * Prints a formatted list of book qualities
      * for 2.87
      * modified for 2.88
      * modified for 2.89
+     * modified for 2.91
      */
     public void printDetails()
     {
@@ -143,5 +174,6 @@ class Book
             //why print ZZZ and not something useful to the user, like Reference Number: N/A?
            System.out.println("ZZZ");   
         }
+        System.out.println("Number of Times Borrowed: "+borrowed);
     }
 }
