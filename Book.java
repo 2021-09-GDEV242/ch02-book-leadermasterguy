@@ -2,9 +2,9 @@
  * A class that maintains information on a book.
  * This might form part of a larger application such
  * as a library system, for instance.
- *
- * @author (Insert your name here.)
- * @version (Insert today's date here.)
+ * implemented get methods
+ * @author Nicholas Trilone
+ * @version 2021.09.20
  */
 class Book
 {
@@ -22,5 +22,21 @@ class Book
         title = bookTitle;
     }
 
-    // Add the methods here ...
+    /**
+     * Returns book author
+     * for 2.83
+     */
+    public String getAuthor()
+    {
+        return author;   
+    }
+    
+    /**
+     * Returns book title
+     * for 2.83
+     */
+    public String getTitle()
+    {
+        return title;   
+    }
 }
