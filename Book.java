@@ -1,9 +1,8 @@
 /**
  * A class that maintains information on a book, including author, title,
  * and the number of pages.
- * This might form part of a larger application such
- * as a library system, for instance.
- * implemented get, and print methods
+ * implemented methods to get, and print fields
+ * printDetails prints all fields simultaneously
  * @author Nicholas Trilone
  * @version 2021.09.20
  */
@@ -77,5 +76,16 @@ class Book
     public void printPages()
     {
         System.out.println("This book's has "+pages+" pages.");
+    }
+    
+    /**
+     * Prints a formatted list of book qualities
+     * for 2.87
+     */
+    public void printDetails()
+    {
+        System.out.println("Title: "+title);
+        System.out.println("Author: "+author);
+        System.out.println("Number of Pages:"+pages);
     }
 }
