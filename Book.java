@@ -1,5 +1,6 @@
 /**
- * A class that maintains information on a book.
+ * A class that maintains information on a book, including author, title,
+ * and the number of pages.
  * This might form part of a larger application such
  * as a library system, for instance.
  * implemented get, and print methods
@@ -11,15 +12,17 @@ class Book
     // The fields.
     private String author;
     private String title;
-
+    private int pages;
+    
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle)
+    public Book(String bookAuthor, String bookTitle, int bookPages)
     {
         author = bookAuthor;
         title = bookTitle;
+        pages = bookPages;
     }
 
     /**
@@ -41,6 +44,15 @@ class Book
     }
     
     /**
+     * Returns book pages
+     * for 2.85
+     */
+    public int getPages()
+    {
+        return pages;   
+    }
+    
+    /**
      * Prints book title
      * for 2.84
      */
@@ -56,5 +68,14 @@ class Book
     public void printTitle()
     {
         System.out.println("This book's title is "+title+".");
+    }
+    
+    /**
+     * Prints number of book pages
+     * for 2.85
+     */
+    public void printPages()
+    {
+        System.out.println("This book's has "+pages+" pages.");
     }
 }
