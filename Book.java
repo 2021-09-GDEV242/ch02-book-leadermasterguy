@@ -108,9 +108,20 @@ class Book
         }
     }
     
+    /**
+     * Sets reference number(String)
+     * must be at least three characters long
+     * for 2.88
+     * modified for 2.90
+     */
     public void setRefNumber(String ref)
     {
-        refNumber = ref;
+        if(ref.length()>=3){
+            refNumber=ref;
+        }
+        else{
+         System.out.println("Error: Reference number must be at least three characters long!"); 
+        }
     }
     
     /**
