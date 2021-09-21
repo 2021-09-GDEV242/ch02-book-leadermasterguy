@@ -1,6 +1,7 @@
 /**
  * A class that maintains information on a book, including author, title,
- * the number of pages, reference number, and number of times borrowed
+ * the number of pages, reference number, number of times borrowed,
+ * and whether or not it is course text
  * allows for the addition of a reference number via set method
  * includes a borrow method that increments borrowed by one
  * implemented methods to get, and print all fields
@@ -19,18 +20,21 @@ class Book
     private String refNumber;
     //added 2.91
     private int borrowed;
+    //added 2.92
+    private boolean courseText;
     
     /**
-     * Set the author, title, pages, and ref fields when this object
-     * is constructed.
-     * modified for 2.85 and 2.88
+     * Set the author, title, pages, refNumber, borrowed, and courseText fields of this object
+     * Constructor for Book class
+     * modified for 2.85, 2.88, and 2.92
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean bookCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        courseText = bookCourseText;
     }
 
     /**
@@ -76,6 +80,15 @@ class Book
     public int getBorrowed()
     {
         return borrowed;   
+    }
+    
+    /**
+     * Returns courseText
+     * for 2.92
+     */
+    public boolean isCourseText()
+    {
+        return courseText;   
     }
     
     /**
@@ -130,6 +143,19 @@ class Book
     }
     
     /**
+     * Prints whether or not a book is course text
+     * for 2.92
+     */
+    public void printCourseText()
+    {
+        if(courseText==true){
+            System.out.println("This book is course text.");
+            return;
+        }
+        System.out.println("This book is not course text.");
+    }
+    
+    /**
      * Sets reference number(String)
      * must be at least three characters long
      * for 2.88
@@ -157,9 +183,7 @@ class Book
     /**
      * Prints a formatted list of book qualities
      * for 2.87
-     * modified for 2.88
-     * modified for 2.89
-     * modified for 2.91
+     * modified in pretty much every iteration after that
      */
     public void printDetails()
     {
@@ -175,5 +199,12 @@ class Book
            System.out.println("ZZZ");   
         }
         System.out.println("Number of Times Borrowed: "+borrowed);
+        System.out.print("Course Text: ");
+        if(courseText==true){
+            System.out.println("True");
+        }
+        else{
+           System.out.println("False"); 
+        }
     }
 }
